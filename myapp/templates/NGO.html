@@ -1,0 +1,162 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Style the button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between the buttons */
+  /* background-color: #f0f0f0;  */
+  padding: 20px; /* Add padding to the container */
+}
+
+/* Style the buttons */
+.custom-button {
+  background-color:#ff214f; /* Change to your desired button background color */
+  color: #fff; /* Change to your desired button text color */
+  border: none;
+  padding: 10px 20px; /* Adjust the padding as needed */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Style the active button */
+.custom-button.active {
+  background-color: #ff214f; /* Change to your desired active button background color */
+}
+
+/* Hover effect */
+.custom-button:hover {
+  background-color: black; /* Change to your desired hover background color */
+  color: #fff; /* Change to your desired hover text color */
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 8.700000000000003rem;
+    padding-left: 0.6999999999999993rem;
+    color: azure;
+    /* font-size: larger; */
+  }
+ 
+    </style>
+	<meta charset="utf-8">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>NGO</title>
+   
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
+
+    <!-- Bootstrap + FoodHut main styles -->
+	<link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+    <!-- Navbar -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              
+                <li class="nav-item">
+                    <a class="nav-link" href="/ngoviewdonation/">VIEW DONATION</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ngoviewrequest/">VIEW REQUEST</a>
+                </li>
+                
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#Donor">Contact Us</a>
+                </li> -->
+            </ul>
+            <a class="navbar-brand m-auto" href="#">
+                
+                <!-- <img src="{% static 'assets/imgs/logo.svg' %}" class="brand-img" alt=""> -->
+                <span class="brand-txt" ><h4>ZEROhunger</h4></span>
+            </a>
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#Admin">Admin<span class="sr-only">(current)</span></a>
+                </li> -->
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/Addemployeess"> ADD EMPLOYEES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/viewemployee/">VIEW EMPLOYEES</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/ngo_profile">PROFILE</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/index/" class="btn btn-primary ml-xl-4">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+            <h1 class=" display-2 font-weight-light my-3" style="font-size:300%; text-transform: capitalize;">Welcome {{name}} To ZEROhunger</h1>
+           
+              
+        </div>
+    </header>
+
+
+    
+    <!-- page footer  -->
+    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>EMAIL US</h3>
+                <P class="text-muted">fooddonation@gmail.com</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>CALL US</h3>
+                <P class="text-muted">9945910642</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>FIND US</h3>
+                <P class="text-muted"><b>ZEROhunger</b>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nemmara(po),<br>
+                    kerala(st),<br>
+                    &nbsp;&nbsp;pin:678508</P>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark text-light text-center border-top wow fadeIn">
+        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
+    </div>
+    <!-- end of page footer -->
+
+	<!-- core  -->
+    <script src="{% static 'assets/vendors/jquery/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+    <!-- bootstrap affix -->
+    <script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+
+    <!-- wow.js -->
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    
+    <!-- google maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+    <!-- FoodHut js -->
+    <script src="{% static 'assets/js/foodhut.js' %}"></script>
+
+</body>
+</html>

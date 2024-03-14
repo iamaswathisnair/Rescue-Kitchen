@@ -1,0 +1,187 @@
+{% load static %}
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			
+			<title>view request</title>
+			<style>
+				* {
+    /* Change your font family */
+    font-family: sans-serif;
+}
+table, tr,  th {
+    color: white !important;
+  }
+  td{
+    color: black !important;
+  }
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    /* min-width: 400px; */
+    width: 1000px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+    background-color: rgb(194, 13, 22);
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(194, 13, 22);
+    background-color:azure;
+}
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: rgb(194, 13, 22);
+}
+body 
+{
+      font-family: Arial, sans-serif;
+      background-image: url(../static/assets/imgs/pexels-hasan-kurt-10749578.jpg);
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    
+			</style>
+            <meta charset="utf-8">
+    
+
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="Start your development with FoodHut landing page.">
+            <meta name="author" content="Devcrud">
+            <title>NGOviewrequest</title>
+           
+            <!-- font icons -->
+            <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+        
+            <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
+        
+            <!-- Bootstrap + FoodHut main styles -->
+            <link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
+		</head>
+		<body>
+            <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+                <!-- Navbar -->
+                <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" href="/NGO/">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <!-- <a class="nav-link" href="/sendcomplaints/">Send Complaint</a> -->
+                            </li>
+                            <li class="nav-item">
+                                <!-- <a class="nav-link" href="/feedback/">Feedback</a> -->
+                            </li>
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="/NGOregister/"></a>
+                            </li> -->
+                        </ul>
+                        <a class="navbar-brand m-auto" href="#">
+                            
+                            <!-- <img src="{% static 'assets/imgs/logo.svg' %}" class="brand-img" alt=""> -->
+                            <span class="brand-txt" ><h4>ZEROhunger</h4></span>
+                        </a>
+                        <ul class="navbar-nav">
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="#Admin">Admin<span class="sr-only">(current)</span></a>
+                            </li> -->
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="/NGOemployeeregister/">NGO Employee</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">Contact</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#contact">FAQ</a>
+                            </li> -->
+                            <!-- <li class="nav-item">
+                                <a class="nav-link" href="/register1/">REGISTER</a>
+                                
+                            </li> -->
+                            <!-- <li class="nav-item">
+                                <a href="donate/" class="btn btn-primary ml-xl-4">DONATE</a>
+                            </li> -->
+                        </ul>
+                    </div>
+                </nav>
+            
+                <!-- header -->
+                <header id="home" class="header">
+                    <div class="overlay text-white text-center">
+                        <!-- <h1 class=" display-2 font-weight-light my-3" style="font-size:300%;">Welcome To ZEROhunger</h1> -->
+                        <!-- <h3>Our goal is to ensure, Feed people not landfills.</h3>
+                        <span style="margin-top: 5px;">Our works are designed to provide essential food support to underserved areas</span>
+                            in the form of food or packaged food products depending on the need.
+                            <br>
+                            <br> -->
+                        <!-- <a class="btn btn-lg btn-primary" href="#gallary">View Our gallary</a> -->
+                        
+                        <!-- <div class="button-container">
+                            <a href="/register1/"><button class="custom-button">REGISTER</button></a>
+                            <a href="/login/"><button class="custom-button">LOG ON</button></a>
+                          </div> -->
+                          <div>
+		
+	<center>
+    <table class="content-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Donar</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Image</th>
+			<th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+			{% for i in data %}
+			
+			<td>{{forloop.counter}}</td>
+            <td>{{i.Name}}</td>
+            <td>{{i.Itemname}}</td>
+            <td>{{i.Quantity}}</td>
+            <td><img src="/media/{{i.uploaded_image}}" width="120px" height="60px"></td>
+            <td>{{i.w_status}}</td>
+
+            
+          </tr>
+		
+        </tbody>
+		{% endfor %}
+      </table>
+	</center>
+</body>
+</html>
+		</body>
+		</html>
+		

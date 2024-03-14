@@ -1,0 +1,98 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+      table,th,td{
+          padding:20px;
+          }
+        /* Style the button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between the buttons */
+  /* background-color: #f0f0f0;  */
+  padding: 20px; /* Add padding to the container */
+}
+input[type=submit] {
+    width: 100%;
+    background-color: #c70b0b;
+    color: rgb(243, 224, 224);
+    padding:5px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family:"roman";
+    font-size:150%; 
+}
+
+/* Style the buttons */
+.custom-button {
+  background-color:#ff214f; /* Change to your desired button background color */
+  color: #fff; /* Change to your desired button text color */
+  border: none;
+  padding: 10px 20px; /* Adjust the padding as needed */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Style the active button */
+.custom-button.active {
+  background-color: #ff214f; /* Change to your desired active button background color */
+}
+
+/* Hover effect */
+.custom-button:hover {
+  background-color: black; /* Change to your desired hover background color */
+  color: #fff; /* Change to your desired hover text color */
+}
+
+ 
+    </style>
+<header id="home" class="header">
+    <div class="overlay text-white text-center">
+     <form action="/updateprofile/" method="post">
+        {% csrf_token %}
+        <center>
+            <table>
+                <h1>UPDATION FORM</h1>
+                <tr> 
+                  <td>id number</td>
+                  <td><input type="text" name="id" value="{{Id}}"  readonly></td>
+              </tr> 
+                <tr> 
+                    <td>First name</td>
+                    <td><input type="text" name="Firstname" value="{{Firstname}}"  ></td>
+                </tr> 
+                <td>Last name</td>
+                <td><input type="text" name="Lastname" value="{{Lastname}}" ></td>
+            </tr>     
+            <tr>
+                <td>Email ID</td>   
+                <td><input type="text" name="Emailid" value="{{Email}}" ></td>
+             </tr>
+            
+             <tr>
+                <td>Password</td>
+                <td><input type="Password" name="Password" value="{{password}}" ></td>
+             </tr>
+             
+             <tr>
+                <td>Address</td>
+                <td><input type="text" name="Address" value="{{Address}}" ></td>
+             </tr>
+             
+             <tr>
+                <td>Contact</td>
+                <td><input type="number" name="ContactNumber" value="{{Contact}}"></td>
+             </tr>
+             <tr>
+                <th><input type="submit" value="Register"></th>
+             </tr>
+
+          </table> 
+     </center>
+ </form>

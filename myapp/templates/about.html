@@ -1,0 +1,312 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Style the button container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px; /* Adjust the gap between the buttons */
+  /* background-color: #f0f0f0;  */
+  padding: 20px; /* Add padding to the container */
+}
+
+/* Style the buttons */
+.custom-button {
+  background-color:#ff214f; /* Change to your desired button background color */
+  color: #fff; /* Change to your desired button text color */
+  border: none;
+  padding: 10px 20px; /* Adjust the padding as needed */
+  border-radius: 5px; /* Add rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth hover transition */
+}
+
+/* Style the active button */
+.custom-button.active {
+  background-color: #ff214f; /* Change to your desired active button background color */
+}
+
+/* Hover effect */
+.custom-button:hover {
+  background-color: black; /* Change to your desired hover background color */
+  color: #fff; /* Change to your desired hover text color */
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: 8.700000000000003rem;
+    padding-left: 0.6999999999999993rem;
+    color: azure;
+    /* font-size: larger; */
+  }
+ 
+  p{
+    /* background-color: aquamarine; */
+    width: 80%;
+    height: 50%;
+    padding: 10px;
+    font-size: 20px;
+   text-align: left;
+  }
+  .p1{
+    /* background-color: #ff214f; */
+    margin-bottom: 160px;
+    /* margin-top: 100px; */
+  }
+ 
+  .h1-tag{
+    margin-top: 180px;
+    margin-left: -90px;
+    /* background-color:chocolate; */
+  }
+    </style>
+	<meta charset="utf-8">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <meta name="author" content="Devcrud">
+    <title>About</title>
+   
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
+
+    <!-- Bootstrap + FoodHut main styles -->
+	<link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+    <!-- Navbar -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/index/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="">About</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="/">ADD REQUEST</a>
+                </li>
+                 -->
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#Donor">Contact Us</a>
+                </li> -->
+            </ul>
+            <a class="navbar-brand m-auto" href="#">
+                
+                <!-- <img src="{% static 'assets/imgs/logo.svg' %}" class="brand-img" alt=""> -->
+                <span class="brand-txt" ><h4>ZEROhunger</h4></span>
+            </a>
+            <ul class="navbar-nav">
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="#Admin">Admin<span class="sr-only">(current)</span></a>
+                </li> -->
+                
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="">VIEW RESTAURANT DETAILS</a> -->
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="">UPDATE WORK STATUS</a> -->
+                </li>
+                <li class="nav-item">
+                    <a href="components.html" class="btn btn-primary ml-xl-4">LOGOUT</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+            <h1 class=h1-tag>
+            
+                
+                About Waste Food Management in Restaurants</h1>
+               <p > 
+
+                At Waste Food Management in Restaurants, we're on a mission to combat food waste and make a positive impact on our communities. We believe that technology can be a powerful force for good, and we've harnessed it to create a platform that connects those with surplus food to those in need.
+                
+               
+                
+                Food waste is a pressing global issue, with millions of tons of perfectly good food ending up in landfills while people go hungry. Restaurants often find themselves with excess food at the end of the day, and there's a growing demand from NGOs and individuals for nutritious meals.</p>
+                
+               
+                
+                <p class="p1">Our web application simplifies the process. Restaurants can list their surplus food, and NGOs can request donations. It's a win-win – restaurants reduce food waste, and the less fortunate receive nourishing meals. We've also made it easy for the public to contribute without registration, promoting a sense of community and shared responsibility.
+                
+                Join Us in the Fight Against Food Waste
+                
+                By using technology to tackle food waste, we're not only helping the needy but also working towards a more sustainable and compassionate world. Join us in making a difference – because together, we can eliminate food waste and ensure that no one goes to bed hungry.
+            </p>
+               
+                
+                
+           
+              
+        </div>
+    </header>
+
+<br>
+<br>
+<br>
+<br>
+    
+    <!-- page footer  -->
+    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>EMAIL US</h3>
+                <P class="text-muted">fooddonation@gmail.com</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>CALL US</h3>
+                <P class="text-muted">9945910642</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>FIND US</h3>
+                <P class="text-muted"><b>ZEROhunger</b>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nemmara(po),<br>
+                    kerala(st),<br>
+                    &nbsp;&nbsp;pin:678508</P>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark text-light text-center border-top wow fadeIn">
+        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
+    </div>
+    <!-- end of page footer -->
+
+	<!-- core  -->
+    <script src="{% static 'assets/vendors/jquery/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+    <!-- bootstrap affix -->
+    <script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+
+    <!-- wow.js -->
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    
+    <!-- google maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+    <!-- FoodHut js -->
+    <script src="{% static 'assets/js/foodhut.js' %}"></script>
+
+</body>
+</html>
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        * {
+/* Change your font family */
+font-family: sans-serif;
+}
+table, tr,  th {
+color: white !important;
+}
+td{
+color: black !important;
+}
+
+.content-table {
+border-collapse: collapse;
+margin: 25px 0;
+font-size: 0.9em;
+/* min-width: 400px; */
+width: 1000px;
+border-radius: 5px 5px 0 0;
+overflow: hidden;
+box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+background-color: rgb(194, 13, 22);
+color: #ffffff;
+text-align: left;
+font-weight: bold;
+}
+
+.content-table th,
+.content-table td {
+padding: 12px 15px;
+}
+
+.content-table tbody tr {
+border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+background-color: #f3f3f3;
+}
+
+.content-table tbody tr:last-of-type {
+border-bottom: 2px solid rgb(194, 13, 22);
+background-color:azure;
+}
+
+.content-table tbody tr.active-row {
+font-weight: bold;
+color: rgb(194, 13, 22);
+}
+body 
+{
+font-family: Arial, sans-serif;
+background-image: url(../static/assets/imgs/pexels-hasan-kurt-10749578.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+}
+
+    </style>
+    <meta charset="UTF-8">
+    <title>Food Booking</title>
+    <!-- Add your CSS styles or include external stylesheets here -->
+</head>
+<body>
+    <h1>Food Booking Details</h1>
+    
+    <table>
+        <tr>
+            <th>No</th>
+            <th>Item Name</th>
+            <th>Contributor</th>
+            <th>Quantity</th>
+            <th>Veg/Non-veg</th>
+            <th>Image</th>
+            <th>Action</th>
+        </tr>
+        <tr>
+            <td>{{ item.id }}</td>
+            <td>{{ item.Itemname }}</td>
+            <td>{{ item.Name }}</td>
+            <td>{{ item.Quantity }}</td>
+            <td>{{ item.Itemtype }}</td>
+            <td><img src="/media/{{ item.uploaded_image }}" width="120px" height="60px"></td>
+            <td>
+                <form action="/save_booking/" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" name="item_id" value="{{ item.id }}">
+                    <label for="quantity">New Quantity:</label>
+                    <input type="number" name="quantity" required>
+                    <label for="remarks">remarks:</label>
+                    <input type="number" name="remarks" required>
+                    <input type="submit" value="Save Changes">
+                </form>
+            </td>
+        </tr>
+    </table>
+
+</body>
+</html>

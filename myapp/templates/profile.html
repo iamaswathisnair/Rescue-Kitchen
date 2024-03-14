@@ -1,0 +1,92 @@
+{% load static %}
+<html>
+    <head>
+            <style>
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  width: 80%;
+  max-width: 800px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+th,td {
+  background-color: #fefefe;
+  color: #0f0707;
+  font-size: 1rem;
+  font-weight: italic;
+  text-align: left;
+  padding: 1rem;
+}
+
+    table,th,td{
+          padding:40px;
+          }
+    form{
+          border:1px solid #ffffff;
+          padding:40px;
+          margin:20px;
+          background-color:#ffffff;
+                  }
+  
+                  table,th,td {
+    width: 100%;
+    padding: 35px;
+    /* margin: 8px 0; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family:"Times New Roman";
+    font-size:150%; 
+    align-content: center;
+  }
+  
+         </style>
+      </head>
+   <body>
+      <!-- form section start -->   
+      <!-- <div class="wrapper bgded overlay" >
+        <img src="{% static 'images\demo\backgrounds\ration.webp' %}" alt=""> -->
+      <form>         <table style="margin-left:auto;margin-right:auto;">
+    <div class=" row justify-content-center">
+        <div class="main_text" >
+        <center><h1>PROFILE</h1>    
+            
+     <tr>
+         <th>Full Name</th>
+         <td>{{Firstname}}</td>
+     </tr>
+
+     <tr>
+         <th>Email ID</th>
+         <td>{{Email}}</td>
+     </tr> 
+     
+     <tr>
+         <th>Address</th>
+         <td>{{Address}}</td>     
+     </tr>
+     
+     <tr>
+        <th>Contact</th>
+        <td>{{Contact}}</td>     
+    </tr>
+    
+    </div>
+    </div>
+    
+</table>
+</form> </center>
+<form action="/update/"method="post">
+  {% csrf_token %}
+  <table>
+    <tr>
+      <input type="submit"value="update">
+    </tr>
+  </table>
+</form>
+<!-- form section end -->
+             
+   </body>
+</html>

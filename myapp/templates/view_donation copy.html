@@ -1,0 +1,248 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+ 
+  
+	<meta charset="utf-8">
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Start your development with FoodHut landing page.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-Cw7ps4smWbOBhB/9dEA1Syz6ZMlYB1FjZLUQqsgUjbO7bFuX5VZ3lJZ9gNkvnO1Vh+suC4AZGqDN9lbzJ7Sc/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta name="author" content="Devcrud">
+    <title>ViewDonation</title>
+   
+    <!-- font icons -->
+    <link rel="stylesheet" href="{% static 'assets/vendors/themify-icons/css/themify-icons.css' %}">
+
+
+    <link rel="stylesheet" href="{% static 'assets/vendors/animate/animate.css' %}">
+
+    <!-- Bootstrap + FoodHut main styles -->
+	<link rel="stylesheet" href="{% static 'assets/css/foodhut.css' %}">
+
+<style>
+
+    * {
+    /* Change your font family */
+    font-family: sans-serif;
+}
+
+.content-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    min-width: 400px;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 5px 10px 60px 10px rgba(0, 0, 0, 0.7);
+ 
+}
+
+.content-table thead tr {
+    background-color: rgb(207, 16, 16);
+    color: #ffffff !important;
+    text-align: left;
+    font-weight: bold;
+}
+table, tr, td, th {
+    color: white;
+  }
+
+.content-table th,
+.content-table td {
+    padding: 12px 15px;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3  !important;
+}
+
+.content-table tbody tr:last-of-type {
+    border-bottom: 2px solid rgb(194, 13, 22);
+}
+
+
+.content-table tbody tr.active-row {
+    font-weight: bold;
+    color: rgb(194, 13, 22);
+}
+  </style>
+</head>
+<body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
+    
+    <!-- Navbar -->
+    <nav class="custom-navbar navbar navbar-expand-lg navbar-dark fixed-top" data-spy="affix" data-offset-top="10">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="/restaurantss/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="/addfood">Add Donation</a> -->
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="/view_donation">View Donation</a> -->
+                </li>
+                
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="/NGOregister/"></a>
+                </li> -->
+            </ul>
+            <a class="navbar-brand m-auto" href="#">
+                
+                <!-- <img src="{% static 'assets/imgs/logo.svg' %}" class="brand-img" alt=""> -->
+                <span class="brand-txt" ><h4>ZEROhunger</h4></span>
+            </a>
+            <ul class="navbar-nav">
+
+                
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="/restaurant_profile">Profile</a> -->
+                </li>
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="/view_donationcopy">History</a> -->
+                <!-- </li> -->
+                <li class="nav-item">
+                    <!-- <a class="nav-link" href="">Logout</a> -->
+                </li>
+                
+            </ul>
+        </div>
+    </nav>
+
+    <!-- header -->
+    <header id="home" class="header">
+        <div class="overlay text-white text-center">
+            <!-- <h1 class="display-2 font-weight-light my-3" style="font-size: 300%;">Welcome {{Name}} To ZEROhunger <i class="fas fa-heart"></i></h1> -->
+
+            <center>
+                <table class="content-table">
+                    <thead>
+                      <tr>
+                        <th>No</th>
+                        <th>Requester Name</th>
+                        <th>Item Name</th>
+                        <th>Available Quantity</th>
+                        <th>Required Quantity</th>
+                        <th>Image</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        {% for i in data %}
+                        
+                        <td>{{forloop.counter}}</td>
+                        <td>{{i.ngoName}}</td>
+                        <td>{{i.Itemname}}</td>
+                        <td>{{i.Quantity}}</td>
+                        <td>{{i.newquantity}}</td>
+                        <td><img src="/media/{{i.uploaded_image}}" width="120px" height="60px"></td>
+                       
+                        <!-- <td>
+                            <select name="status" >
+                                <option value="waiting" {% if i.w_status == 'waiting' %}selected{% endif %}>Waiting</option>
+                                <option value="Request Accepted" {% if i.w_status == 'Request Accepted' %}selected{% endif %}>Accept</option>
+                                <option value="Request Denied" {% if i.w_status == 'Request Denied' %}selected{% endif %}>Over</option>
+                        </td> -->
+
+
+
+                        <td>
+                            <form action="{% url 'update_status' id=i.id %}" method="post">
+                                {% csrf_token %}
+                                <select name="new_status">
+                                    <option value="waiting" {% if i.w_status == 'waiting' %}selected{% endif %}>Waiting</option>
+                                    <option value="Request Accepted" {% if i.w_status == 'Request Accepted' %}selected{% endif %}>Request Accepted</option>
+                                    <option value="Request Denied" {% if i.w_status == 'Request Denied' %}selected{% endif %}>Request Denied</option>
+                                </select>
+                                <button type="submit">Update Status</button>
+                            </form>
+                        </td>
+            
+                      </tr>
+                    
+                    </tbody>
+                    {% endfor %}
+                  </table>
+                </center>
+              
+        </div>
+    </header>
+
+
+
+
+
+
+
+
+    <div class="container-fluid bg-dark text-light has-height-md middle-items border-top text-center wow fadeIn">
+        <div class="row">
+            <div class="col-sm-4">
+                <h3>EMAIL US</h3>
+                <P class="text-muted">fooddonation@gmail.com</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>CALL US</h3>
+                <P class="text-muted">9945910642</P>
+            </div>
+            <div class="col-sm-4">
+                <h3>FIND US</h3>
+                <P class="text-muted"><b>ZEROhunger</b>,<br>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nemmara(po),<br>
+                    kerala(st),<br>
+                    &nbsp;&nbsp;pin:678508</P>
+            </div>
+        </div>
+    </div>
+    <div class="bg-dark text-light text-center border-top wow fadeIn">
+        <p class="mb-0 py-3 text-muted small">&copy; Copyright <script>document.write(new Date().getFullYear())</script> Made with <i class="ti-heart text-danger"></i> By <a href="http://devcrud.com">DevCRUD</a></p>
+    </div>
+    <!-- end of page footer -->
+
+	<!-- core  -->
+    <script src="{% static 'assets/vendors/jquery/jquery-3.4.1.js' %}"></script>
+    <script src="{% static 'assets/vendors/bootstrap/bootstrap.bundle.js' %}"></script>
+
+    <!-- bootstrap affix -->
+    <script src="{% static 'assets/vendors/bootstrap/bootstrap.affix.js' %}"></script>
+
+    <!-- wow.js -->
+    <script src="{% static 'assets/vendors/wow/wow.js' %}"></script>
+    
+    <!-- google maps -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
+    <!-- FoodHut js -->
+    <script src="{% static 'assets/js/foodhut.js' %}"></script>
+
+</body>
+</html>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
